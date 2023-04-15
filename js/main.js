@@ -11,18 +11,16 @@ function genera() {
     console.log(eta);
 
 
-    prezzo= 0.21 *km;
+    prezzo= (0.21 *km).toFixed(2);
     if (eta == "Minorenne") {
-        prezzo *= (0.80).toFixed(1);
-
+        prezzo = (0.21 * 0.80 * km).toFixed(2);
         console.log("il prezzo è " + prezzo)
     } else if (eta == "Over65") {
-        prezzo *= (0.60).toFixed(1);
-
+        prezzo = (0.21 * 0.60 * km).toFixed(2);
         console.log("il prezzo è " + prezzo)
     }
     else if (eta == 'Maggiorenne') {
-        prezzo = (0.21 * km).toFixed(1);
+        prezzo = (0.21 * km).toFixed(2);
         console.log("il prezzo è " + prezzo)
     }
     else {
