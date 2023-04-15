@@ -41,6 +41,16 @@ function genera() {
 
 
 }
+function annullaBiglietto() {
+    document.getElementById("nome").innerHTML = ``;
+    document.getElementById("costo-biglietto").innerHTML = ``;
+    document.getElementById("sconto").innerHTML = ``;
+    document.getElementById("carrozza").innerHTML = ``;
+    document.getElementById("codice-cp").innerHTML = ``;
+
+    document.getElementById('ticket').classList.add("show");
+
+}
 
 
 
