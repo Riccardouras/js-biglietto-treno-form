@@ -1,37 +1,48 @@
+let generaBiglietto = document.getElementById("Biglietto");
 
-console.log(`prezzo`);
-let km = document.getElementById("km");
-console.log(`km`);
-let eta = document.getElementById("inputGroupSelect01");
-console.log(`eta`);
-let nomeCognome = document.getElementById("nm")
-console.log(`nomeCognome`)
+function genera() {
+    const name = document.getElementById("name").value;
+    console.log(name);
 
-function generaBiglietto () {
-    let prezzo = 0.21 * km;
-    if (eta="1"){
-        prezzo *= 0.8.toFixed(2);
-        document.getElementById("Biglietto").innerHTML = `Sconto Minori`;
-        document.getElementById("costo").innerHTML = `${prezzo}`;
-        document.getElementById("Nome").innerHTML = `${nomeCognome}`;
-    } else if (eta="2"){
-        prezzo *= 0.6.toFixed(2);
-        document.getElementById("Biglietto").innerHTML = `Sconto Anziani`;
-        document.getElementById("costo").innerHTML = `${prezzo}`;
-        document.getElementById("Nome").innerHTML = `${nomeCognome}`;
-    } else{
-        document.getElementById("Nome").innerHTML = `${nomeCognome}`;
-        document.getElementById("costo").innerHTML = `${prezzo}`;
+    const km = document.getElementById("km").value;
+    console.log(km);
+
+    const eta = document.getElementById("inputGroupSelect01").value;
+    console.log(eta);
+
+
+    prezzo= 0.21 *km;
+    if (eta == "Minorenne") {
+        prezzo *= (0.80).toFixed(1);
+
+        console.log("il prezzo è " + prezzo)
+    } else if (eta == "Over65") {
+        prezzo *= (0.60).toFixed(1);
+
+        console.log("il prezzo è " + prezzo)
     }
-    console.log(`prezzo`);
+    else if (eta == 'Maggiorenne') {
+        prezzo = (0.21 * km).toFixed(1);
+        console.log("il prezzo è " + prezzo)
+    }
+    else {
+    }
+
+    const carrozza = Math.floor(Math.random() * 10) + 1;
+
+    const codiceCp = Math.floor(Math.random() * 100000) + 900000;
+
+    document.getElementById("nome").innerHTML = name;
+    document.getElementById("costo-biglietto").innerHTML = prezzo + "€";
+    document.getElementById("sconto").innerHTML = prezzo;
+    document.getElementById("carrozza").innerHTML = carrozza;
+    document.getElementById("codice-cp").innerHTML = codiceCp;
+
+    document.getElementById('ticket').classList.add("show");
+
+
+
 }
-function annullaBiglietto (){
-    document.getElementById("km").innerHTML = `Tratta`;
-    km= null;
-    // document.getElementById("inputGroupSelect01").innerHTML = ``;
-    eta= null;
-    document.getElementById("nm").innerHTML = `Inserisci nome`;
-    nomeCognome= null;
-}
+
 
 
